@@ -9,7 +9,10 @@
             <h5 class="card-title">{{ $post->title }}</h5>
             <p class="card-text">{{ $post->content }}</p>
 
-            <a href="/posts/edit/{{ $post->id }}">Editar</a>
+            <div>
+                <a href="/posts/edit/{{ $post->id }}">Editar</a>
+                <a href="/posts/delete/{{ $post->id }}">Deletar</a>
+            </div>
         </div>       
     @endforeach
 @endsection

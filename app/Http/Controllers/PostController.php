@@ -18,6 +18,18 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
+    public function posts()
+    {
+        $posts = Post::all();
+        return view('posts.index', compact('posts'));
+    }
+
+    public function showPosts($id)
+    {
+        $post = Post::find($id);
+        return view('posts.show', compact('post'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -97,6 +109,13 @@ class PostController extends Controller
         return redirect('/dashboard');
     }
 
+    public function deletePost($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('/dashboard');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -105,6 +124,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //deletePost
     }
 }

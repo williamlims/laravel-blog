@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ExerciseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +34,11 @@ Route::post('/posts/store', [PostController::class, 'store'])->name('dashboard')
 Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('dashboard')->middleware('auth');
 
 Route::post('/posts/update/{id}', [PostController::class, 'update'])->name('dashboard')->middleware('auth');
+
+Route::get('/photo', [ExerciseController::class, 'photo']);
+
+Route::get('/posts', [PostController::class, 'posts']);
+
+Route::get('/posts/show/{id}', [PostController::class, 'showPosts']);
+
+Route::get('/posts/delete/{id}', [PostController::class, 'deletePost']);
