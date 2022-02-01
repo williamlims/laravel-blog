@@ -37,7 +37,7 @@ Route::post('/posts/update/{id}', [PostController::class, 'update'])->name('dash
 
 Route::get('/photo', [ExerciseController::class, 'photo']);
 
-Route::get('/posts', [PostController::class, 'posts']);
+Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('/posts/show/{id}', [PostController::class, 'showPosts']);
 
